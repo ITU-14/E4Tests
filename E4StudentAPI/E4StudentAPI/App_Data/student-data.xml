@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<students>
+  <student>
+    <id>b1790c0c-b477-459d-b805-8a22c62f4d6c</id>
+    <name>Matt</name>
+    <surname>Otto</surname>
+    <gender>M</gender>
+    <class>Sophomore Year</class>
+  </student>
+  <student>
+    <id>96779f1b-636c-435b-8432-ebf5e6d6a8f2</id>
+    <name>Martha</name>
+    <surname>Wayne</surname>
+    <gender>W</gender>
+    <class>Sophomore Year</class>
+  </student>
+  <student>
+    <id>b1d18faf-edee-4976-89fb-cefbe61cfeba</id>
+    <name>Tony</name>
+    <surname>Stark</surname>
+    <gender>M</gender>
+    <class>Sophomore Year</class>
+  </student>
+</students>
