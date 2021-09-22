@@ -1,6 +1,8 @@
 Author: NIRIJAONA Lala Ricoeur Khino
 Subject: E4 .NET Tests
-.Net Framework Version: 4.5
+GitHub Repo: https://github.com/ITU-14/E4Tests.git
+.Net Framework Target Version: 4.5
+
 
 ## Test 1: Web Application - Capture form
 - Path: ./WebApplicationE4
