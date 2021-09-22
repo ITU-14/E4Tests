@@ -1,0 +1,64 @@
+﻿<div class="modal fade" id="userEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="userEditLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="userEditLabel">Add a new record</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="POST" action="@Url.Action("InsertOrUpdate", "Home")">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <input type="hidden" name="ID" id="UserId" />
+                        <label for="name" class="form-label">Name*</label>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="User name..." required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="surname" class="form-label">Surname*</label>
+                        <input type="text" name="surname" class="form-control" id="surname" placeholder="User surname..." required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="cellphone" class="form-label">Cellphone number</label>
+                        <input type="text" name="cellphone" class="form-control" id="cellphone" placeholder="User cellphone number..." />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-save"></i>
+                        Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    const editButtons = document.querySelectorAll(".edit");
+    for (let k = 0; k < editButtons.length; k++) {
+        editButtons[k].addEventListener("click", (_event) => {
+            document.querySelector("#userEditLabel").innerHTML = "Edit record";
+            let userId = editButtons[k].dataset.userid;
+            let username = editButtons[k].dataset.name;
+            let userSurname = editButtons[k].dataset.surname;
+            let cellphone = editButtons[k].dataset.cellphone;
+
+            document.querySelector("#UserId").value = userId;
+            document.querySelector("#name").value = username;
+            document.querySelector("#surname").value = userSurname;
+            document.querySelector("#cellphone").value = cellphone;
+        });
+    }
+
+    const addButton = document.querySelector("#add-user");
+    addButton.addEventListener("click", (_event) => {
+        document.querySelector("#userEditLabel").innerHTML = "Add a new record";
+
+        document.querySelector("#UserId").value = "";
+        document.querySelector("#name").value = "";
+        document.querySelector("#surname").value = "";
+        document.querySelector("#cellphone").value = "";
+    });
+    
+    
+</script>

@@ -1,0 +1,74 @@
+﻿@using WebApplicationE4.Models;
+@model IList<UserModel>
+
+@{
+    ViewBag.Title = "List of users";
+    var k = 0;
+}
+
+<div class="row">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-primary" id="add-user" type="button" data-bs-toggle="modal" data-bs-target="#userEdit">
+            <i class="bi bi-person-plus-fill"></i>
+            Add
+        </button>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Surname</th>
+                <th scope="col">Cellphone Number</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                k++;
+                <tr>
+                    <th scope="row">@(k)</th>
+                    <td>@user.Name</td>
+                    <td>@user.Surname</td>
+                    <td>@user.Cellphone</td>
+                    <td>
+                        <button type="button"
+                                class="btn btn-outline-success edit"
+                                data-bs-toggle="modal"
+                                data-bs-target="#userEdit"
+                                data-userid="@user.ID"
+                                data-name="@user.Name"
+                                data-surname="@user.Surname"
+                                data-cellphone="@user.Cellphone">
+                            <i class="bi bi-pencil-square"></i>
+                            Edit
+                        </button>
+                        <button type="button" 
+                                class="btn btn-outline-danger delete-user" 
+                                data-bs-toggle="modal" 
+                                data-bs-target="#userDeletion"
+                                data-userid="@user.ID"
+                                data-name="@user.Name"
+                                data-surname="@user.Surname">
+                            <i class="bi bi-person-x-fill"></i>
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+                
+            }
+            @if (Model.Count == 0)
+            {
+                <tr>
+                    <td colspan="5" class="table-active">No Results</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@Html.Partial("~/Views/Users/_UserEdit.cshtml")
+
+@Html.Partial("~/Views/Users/_UserDeletion.cshtml")
+

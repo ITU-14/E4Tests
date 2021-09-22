@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<users>
+  <user>
+    <id>b1790c0c-b477-459d-b805-8a22c62f4d6c</id>
+    <name>Matt</name>
+    <surname>Otto</surname>
+    <cellphone>+230 5698 2565</cellphone>
+  </user>
+  <user>
+    <id>96779f1b-636c-435b-8432-ebf5e6d6a8f2</id>
+    <name>Mattew</name>
+    <surname>Murdoc</surname>
+    <cellphone>+261 32 02 365 47</cellphone>
+  </user>
+  <user>
+    <id>b1d18faf-edee-4976-89fb-cefbe61cfeba</id>
+    <name>Tony</name>
+    <surname>Stark</surname>
+    <cellphone>+261 32 52 365 47</cellphone>
+  </user>
+</users>

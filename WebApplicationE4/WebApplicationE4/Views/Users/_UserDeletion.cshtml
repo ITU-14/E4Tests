@@ -1,0 +1,37 @@
+﻿<div class="modal fade" id="userDeletion" tabindex="-1" aria-labelledby="userDeletionLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="userDeletionLabel">Remove Record</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="POST" action="@Url.Action("RemoveUser", "Home")">
+                <div class="modal-body">
+                    <input type="hidden" name="ID" id="UserIdDelete" />
+                    Are you sure to delete the following user: <strong><span id="username"></span></strong> ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger">
+                        <i class="bi bi-person-x"></i>
+                        Delete
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    const deleteButtons = document.querySelectorAll(".delete-user");
+    for (let k = 0; k < deleteButtons.length; k++) {
+        deleteButtons[k].addEventListener("click", (_event) => {
+            let userId = deleteButtons[k].dataset.userid;
+            let username = deleteButtons[k].dataset.name;
+            let userSurname = deleteButtons[k].dataset.surname;
+            
+            document.querySelector("#UserIdDelete").value = userId;
+            document.querySelector("#username").innerHTML = username + " " + userSurname;
+        });
+    }
+</script>
