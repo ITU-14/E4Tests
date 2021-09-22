@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "f33ee053-927f-416e-b7a1-abaea7329a42",
+		"name": "Student REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Student By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:64142/api/student/b1790c0c-b477-459d-b805-8a22c62f4d6c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64142",
+					"path": [
+						"api",
+						"student",
+						"b1790c0c-b477-459d-b805-8a22c62f4d6c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:64142/api/student",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64142",
+					"path": [
+						"api",
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\": \"Scott\",\r\n    \"Surname\": \"Lang\",\r\n    \"Gender\": \"M\",\r\n    \"Class\": \"Sophomore Year\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:64142/api/student",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64142",
+					"path": [
+						"api",
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Student Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:64142/api/student/1c1c0a67-0288-44ed-9112-e10009bf5768",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "64142",
+					"path": [
+						"api",
+						"student",
+						"1c1c0a67-0288-44ed-9112-e10009bf5768"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
